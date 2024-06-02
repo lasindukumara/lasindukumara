@@ -1,16 +1,11 @@
+# Lasindu's GitHub Repository
+
 - 👋 Hi, I’m lasindu kumara
 - 👀 I’m interested in web development & software development...
 - 🌱 I’m currently learning HTML PHP Javascript C# and many more languages 
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me lasindukumara2020@Gmail.com ...
 
-
-
-Certainly! Here's an example of what you could include in your README file:
-
----
-
-# Lasindu's GitHub Repository
 
 ## About
 Welcome to my GitHub repository! Here you'll find a collection of projects and code snippets that showcase my skills and interests in [mention your primary areas of interest, e.g., web development, machine learning, etc.]. Feel free to explore, contribute, and connect with me!
