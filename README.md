@@ -12,8 +12,6 @@ Welcome to my GitHub repository! Here you'll find a collection of projects and c
 
 ## Projects
 - **[Project Name 1](link to project 1)**: Brief description of project 1.
-- **[Project Name 2](link to project 2)**: Brief description of project 2.
-- **[Project Name 3](link to project 3)**: Brief description of project 3.
 
 ## How to Use
 If you'd like to run any of the projects locally, follow these steps:
