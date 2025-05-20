@@ -2,60 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Simple Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Futuristic Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background-color: #f2f2f2;
-      color: #333;
+      padding: 0;
     }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
     header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 20px 0;
       text-align: center;
+      padding: 60px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3em;
+      color: #00ffe1;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-top: 10px;
+    }
+
     nav {
-      background-color: #333;
-      padding: 10px 0;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      backdrop-filter: blur(5px);
     }
+
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #00ffe1;
       text-decoration: none;
+      margin: 0 20px;
       font-weight: bold;
+      transition: color 0.3s;
     }
+
     nav a:hover {
-      text-decoration: underline;
+      color: #fff;
     }
+
     .container {
       max-width: 1000px;
-      margin: 20px auto;
+      margin: 40px auto;
       padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
     }
+
     section {
-      margin-bottom: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 255, 225, 0.1);
+      transition: transform 0.3s;
     }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
     h2 {
-      border-bottom: 2px solid #4CAF50;
-      padding-bottom: 5px;
+      border-left: 5px solid #00ffe1;
+      padding-left: 10px;
+      font-family: 'Orbitron', sans-serif;
+      color: #00ffe1;
+      margin-bottom: 20px;
     }
+
+    ul {
+      list-style: none;
+      padding-left: 10px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #00ffe1;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     footer {
-      background-color: #4CAF50;
-      color: white;
       text-align: center;
-      padding: 15px 0;
+      padding: 20px;
+      color: #888;
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 40px;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #00ffe1; }
+      50% { text-shadow: 0 0 20px #00ffe1; }
+      100% { text-shadow: 0 0 5px #00ffe1; }
+    }
+
+    header h1 {
+      animation: glow 2s infinite;
+    }
+
+    @media screen and (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      nav a {
+        margin: 0 10px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>My Portfolio</h1>
-    <p>Hello! I'm a Web Developer</p>
+    <h1>Lasindu Kumara</h1>
+    <p>Tech Enthusiast • Developer • Dreamer</p>
   </header>
 
   <nav>
@@ -68,29 +154,29 @@
     <section id="about">
       <h2>About Me</h2>
       <p>
-        I'm passionate about building web applications. I enjoy solving problems and learning new technologies. I specialize in front-end development with HTML, CSS, JavaScript, and React.
+        I'm a passionate web developer who loves creating intuitive digital experiences. I specialize in front-end technologies and enjoy bringing futuristic UIs to life with code.
       </p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><strong>Project 1:</strong> Portfolio Website</li>
-        <li><strong>Project 2:</strong> Todo App using React</li>
-        <li><strong>Project 3:</strong> E-commerce Template with HTML/CSS</li>
+        <li><strong>BrightMinds Academy</strong> – An LMS with secure API integration.</li>
+        <li><strong>React Video Call App</strong> – Real-time communication with WebRTC & TypeScript.</li>
+        <li><strong>Next.js Education Platform</strong> – Modern LMS using Next.js 15 + Tailwind.</li>
       </ul>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: yourname@example.com</p>
-      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">yourusername</a></p>
+      <p>Email: <a href="mailto:lasindu@example.com">lasindu@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/lasindukumara" target="_blank">lasindukumara</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/lasindukumara" target="_blank">lasindukumara</a></p>
     </section>
   </div>
 
   <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+    <p>&copy; 2025 Lasindu Kumara. All rights reserved.</p>
   </footer>
 
 </body>
