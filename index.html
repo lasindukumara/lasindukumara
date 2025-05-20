@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Futuristic Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet">
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -14,170 +14,243 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
       color: #fff;
-      line-height: 1.6;
       overflow-x: hidden;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      margin: 20px;
     }
 
     header {
       text-align: center;
       padding: 60px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     header h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3em;
-      color: #00ffe1;
+      color: #00f9ff;
+      text-shadow: 0 0 20px #00f9ff;
     }
 
     header p {
       font-size: 1.2em;
-      color: #ccc;
+      color: #eee;
       margin-top: 10px;
     }
 
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: center;
-      background-color: rgba(0, 0, 0, 0.3);
-      padding: 15px;
-      backdrop-filter: blur(5px);
+      padding: 15px 0;
+      transition: background 0.3s;
     }
 
     nav a {
-      color: #00ffe1;
+      color: #00f9ff;
       text-decoration: none;
-      margin: 0 20px;
+      margin: 0 25px;
       font-weight: bold;
-      transition: color 0.3s;
+      font-size: 1.1em;
+      position: relative;
     }
 
-    nav a:hover {
-      color: #fff;
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #00f9ff;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     .container {
       max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
+      margin: auto;
+      padding: 40px 20px;
     }
 
-    section {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0, 255, 225, 0.1);
-      transition: transform 0.3s;
-    }
-
-    section:hover {
-      transform: translateY(-5px);
-    }
-
-    h2 {
-      border-left: 5px solid #00ffe1;
-      padding-left: 10px;
+    section h2 {
+      color: #00f9ff;
       font-family: 'Orbitron', sans-serif;
-      color: #00ffe1;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
-    ul {
+    section ul {
       list-style: none;
-      padding-left: 10px;
+      padding-left: 0;
     }
 
-    ul li {
+    section ul li {
       margin-bottom: 10px;
     }
 
     a {
-      color: #00ffe1;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      color: #00f9ff;
     }
 
     footer {
+      background-color: #111;
+      padding: 40px 20px;
+      color: #ccc;
+    }
+
+    .footer-container {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .footer-section h3 {
+      color: #00f9ff;
+      margin-bottom: 15px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
       text-align: center;
-      padding: 20px;
+      margin-top: 30px;
       color: #888;
-      background: rgba(255, 255, 255, 0.03);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      margin-top: 40px;
-    }
-
-    @keyframes glow {
-      0% { text-shadow: 0 0 5px #00ffe1; }
-      50% { text-shadow: 0 0 20px #00ffe1; }
-      100% { text-shadow: 0 0 5px #00ffe1; }
-    }
-
-    header h1 {
-      animation: glow 2s infinite;
+      font-size: 0.9em;
     }
 
     @media screen and (max-width: 768px) {
-      header h1 {
-        font-size: 2em;
+      nav {
+        flex-direction: column;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        gap: 20px;
       }
 
       nav a {
-        margin: 0 10px;
+        margin: 10px 0;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <header class="glass">
     <h1>Lasindu Kumara</h1>
-    <p>Tech Enthusiast • Developer • Dreamer</p>
+    <p>Tech Enthusiast | Developer | Nature Lover</p>
   </header>
 
-  <nav>
+  <nav id="navbar">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <div class="container">
-    <section id="about">
+    <section id="about" class="glass">
       <h2>About Me</h2>
-      <p>
-        I'm a passionate web developer who loves creating intuitive digital experiences. I specialize in front-end technologies and enjoy bringing futuristic UIs to life with code.
-      </p>
+      <p>I’m a web developer passionate about futuristic UI and modern tech. Currently studying at the University of Colombo, working on React, Next.js, and educational platforms.</p>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="glass">
       <h2>Projects</h2>
       <ul>
-        <li><strong>BrightMinds Academy</strong> – An LMS with secure API integration.</li>
-        <li><strong>React Video Call App</strong> – Real-time communication with WebRTC & TypeScript.</li>
-        <li><strong>Next.js Education Platform</strong> – Modern LMS using Next.js 15 + Tailwind.</li>
+        <li><strong>BrightMinds Academy:</strong> Learning platform with user roles and secure API integration.</li>
+        <li><strong>Video Call App:</strong> Built with TypeScript & WebRTC in Next.js.</li>
+        <li><strong>EduSite:</strong> Education website with Telegram and image message features.</li>
       </ul>
     </section>
 
-    <section id="contact">
+    <section id="skills" class="glass">
+      <h2>Skills</h2>
+      <ul>
+        <li>JavaScript, TypeScript, React, Next.js</li>
+        <li>HTML5, CSS3, Tailwind CSS</li>
+        <li>Nodemailer, WebRTC, Firebase</li>
+        <li>Git, GitHub, Responsive Design</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="glass">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:lasindu@example.com">lasindu@example.com</a></p>
       <p>GitHub: <a href="https://github.com/lasindukumara" target="_blank">lasindukumara</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/lasindukumara" target="_blank">lasindukumara</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/lasindukumara" target="_blank">lasindukumara</a></p>
     </section>
   </div>
 
   <footer>
-    <p>&copy; 2025 Lasindu Kumara. All rights reserved.</p>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li>Email: lasindu@example.com</li>
+          <li>Phone: +94 71 234 5678</li>
+          <li>Location: Colombo, Sri Lanka</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Me</h3>
+        <ul>
+          <li><a href="https://github.com/lasindukumara">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/lasindukumara">LinkedIn</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Lasindu Kumara. All rights reserved.
+    </div>
   </footer>
+
+  <script>
+    // Change navbar background on scroll
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+      } else {
+        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+      }
+    });
+  </script>
 
 </body>
 </html>
