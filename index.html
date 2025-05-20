@@ -3,252 +3,185 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <title>Lasindu Kumara | Portfolio</title>
   <style>
+    :root {
+      --accent: #007bff;
+      --glass-bg: rgba(255, 255, 255, 0.1);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    .glass {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 20px;
-      margin: 20px;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3em;
-      color: #00f9ff;
-      text-shadow: 0 0 20px #00f9ff;
-    }
-
-    header p {
-      font-size: 1.2em;
-      color: #eee;
-      margin-top: 10px;
+      background: linear-gradient(to right top, #dfe9f3, #ffffff);
+      color: #333;
     }
 
     nav {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background-color: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
       display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      transition: background 0.3s;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      z-index: 10;
     }
 
-    nav a {
-      color: #00f9ff;
+    nav h1 {
+      color: var(--accent);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
       text-decoration: none;
-      margin: 0 25px;
-      font-weight: bold;
-      font-size: 1.1em;
-      position: relative;
+      color: #333;
+      font-weight: 500;
     }
 
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -5px;
-      left: 0;
-      background-color: #00f9ff;
-      transition: 0.3s;
-    }
-
-    nav a:hover::after {
-      width: 100%;
+    nav ul li a:hover {
+      color: var(--accent);
     }
 
     .container {
       max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
-    section h2 {
-      color: #00f9ff;
-      font-family: 'Orbitron', sans-serif;
-      margin-bottom: 15px;
+    .card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    section ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    section ul li {
-      margin-bottom: 10px;
-    }
-
-    a {
-      color: #00f9ff;
+    .card h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
 
     footer {
-      background-color: #111;
-      padding: 40px 20px;
-      color: #ccc;
-    }
-
-    .footer-container {
-      max-width: 1000px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: space-between;
-    }
-
-    .footer-section h3 {
-      color: #00f9ff;
-      margin-bottom: 15px;
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-section ul li {
-      margin-bottom: 10px;
-    }
-
-    .footer-bottom {
+      background: #f8f8f8;
+      padding: 2rem;
       text-align: center;
-      margin-top: 30px;
-      color: #888;
-      font-size: 0.9em;
+      border-top: 1px solid #ddd;
+      font-size: 0.9rem;
     }
 
-    @media screen and (max-width: 768px) {
-      nav {
-        flex-direction: column;
-      }
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
 
-      .footer-container {
-        flex-direction: column;
-        gap: 20px;
-      }
+    .tabs button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #eee;
+      transition: 0.3s;
+    }
 
-      nav a {
-        margin: 10px 0;
-      }
+    .tabs button.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
     }
   </style>
 </head>
 <body>
 
-  <header class="glass">
-    <h1>Lasindu Kumara</h1>
-    <p>Tech Enthusiast | Developer | Nature Lover</p>
-  </header>
-
-  <nav id="navbar">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+  <nav>
+    <h1>Lasindu</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
   <div class="container">
-    <section id="about" class="glass">
+
+    <div id="about" class="card">
       <h2>About Me</h2>
-      <p>I’m a web developer passionate about futuristic UI and modern tech. Currently studying at the University of Colombo, working on React, Next.js, and educational platforms.</p>
-    </section>
+      <p>I'm Lasindu Kumara — a tech enthusiast focused on web development and clean UI design. I love blending creativity with function, building responsive, user-friendly websites and platforms.</p>
+    </div>
 
-    <section id="projects" class="glass">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>BrightMinds Academy:</strong> Learning platform with user roles and secure API integration.</li>
-        <li><strong>Video Call App:</strong> Built with TypeScript & WebRTC in Next.js.</li>
-        <li><strong>EduSite:</strong> Education website with Telegram and image message features.</li>
-      </ul>
-    </section>
+    <div class="card">
+      <h2>My Work</h2>
+      <div class="tabs">
+        <button class="tab-button active" data-target="projects">Projects</button>
+        <button class="tab-button" data-target="skills">Skills</button>
+      </div>
 
-    <section id="skills" class="glass">
-      <h2>Skills</h2>
-      <ul>
-        <li>JavaScript, TypeScript, React, Next.js</li>
-        <li>HTML5, CSS3, Tailwind CSS</li>
-        <li>Nodemailer, WebRTC, Firebase</li>
-        <li>Git, GitHub, Responsive Design</li>
-      </ul>
-    </section>
+      <div id="projects" class="tab-content active">
+        <ul>
+          <li><strong>BrightMinds Academy:</strong> A secure LMS built with Next.js and TypeScript.</li>
+          <li><strong>VideoCall App:</strong> Real-time video calling using WebRTC and TypeScript.</li>
+          <li><strong>EduConnect:</strong> An education platform with Telegram bot integration.</li>
+        </ul>
+      </div>
 
-    <section id="contact" class="glass">
+      <div id="skills" class="tab-content">
+        <ul>
+          <li>JavaScript / TypeScript</li>
+          <li>React / Next.js / Tailwind CSS</li>
+          <li>APIs / Firebase / Node.js</li>
+          <li>Git, GitHub, Responsive Design</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="contact" class="card">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:lasindu@example.com">lasindu@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/lasindukumara" target="_blank">lasindukumara</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/lasindukumara" target="_blank">lasindukumara</a></p>
-    </section>
+      <p>GitHub: <a href="https://github.com/lasindukumara" target="_blank">github.com/lasindukumara</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/lasindukumara" target="_blank">linkedin.com/in/lasindukumara</a></p>
+    </div>
+
   </div>
 
   <footer>
-    <div class="footer-container">
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Contact Info</h3>
-        <ul>
-          <li>Email: lasindu@example.com</li>
-          <li>Phone: +94 71 234 5678</li>
-          <li>Location: Colombo, Sri Lanka</li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Follow Me</h3>
-        <ul>
-          <li><a href="https://github.com/lasindukumara">GitHub</a></li>
-          <li><a href="https://linkedin.com/in/lasindukumara">LinkedIn</a></li>
-          <li><a href="#">Twitter</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2025 Lasindu Kumara. All rights reserved.
-    </div>
+    &copy; 2025 Lasindu Kumara. Built with simplicity and purpose.
   </footer>
 
   <script>
-    // Change navbar background on scroll
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
-      } else {
-        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
-      }
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(button.dataset.target).classList.add('active');
+      });
     });
   </script>
 
